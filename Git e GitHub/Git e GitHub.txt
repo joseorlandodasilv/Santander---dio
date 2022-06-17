@@ -1,0 +1,126 @@
+cd >>> entrar e sair de pastas
+dir >>> listar os arquivos dentro da pasta atual (windows)
+ls >>>  listar os arquivos dentro da pasta atual  (linux)
+ls -a >>> lista arquivos ocultos 
+cls >>> limpar terminal (windows)
+clear >>> limpar terminal (linux)
+mkdir >>> criar pasta 
+echo ola>hello.txt >>> o echo retorna a informação descrita, nesse caso vai retornar no arquivo chamado hello.txt
+del >>> deleta arquivos
+rmdir nome da pasta >>> deletar pasta com todos os arquivos (windows)
+rm nome da pasta >>>deletar pasta com todos os arquivos (linux)
+pwd >>> mostra o caminha da pasta atual (linux)
+cat >>> mostra o conteúdo do arquivo
+mv >>> comando para mover um arquivo para outra pasta
+mv nomedoarquivo ./nomedapastadestino/
+------------------------------------------------------------------------
+SHA1 - Algoritmo de criptografia (caracteres de 40 dígitos)
+No git bash:
+$ openssl sha1 hello.txt
+SHA1(hello.txt)= af00a721066f9aa38ba4324d292f02512e280f52
+------------------------------------------------------------------------
+BLOBS / TREES / COMMITS
+Blob - armazena arquivos criptografados em sha-1 
+Trees - armazena/aponta para blobs, outras árvores(trees) ou arquivos
+Commit - armazena/aponta para commit, blobs, trees ou arquivos
+------------------------------------------------------------------------
+CHAVE SSH e TOKENS
+Chave SSH - conexão segura e criptografada entre duas máquinas
+Como gerar um chave SSH
+no git bash
+ssh-keygen -t ed25519 -C joseorlandodasilv@gmail.com
+agora devo ir no gitlab em ssh e da new ssh
+no git bash usarei o comando CAT para ler oque esta contido na chave SSH publica
+cat id_ed25519.pub
+pego a linha que foi gerada e colo no gitlab
+agora no gitbash irei iniciar o projeto
+eval $(ssh-agent -s)
+o Agent pid mais o numero é informando que o processo foi iniciado e a númeração
+agora para passa o caminho onde a chave esta (chave privada para descriptografa)
+ssh-add id-ed25519   <<<< nome da chave privada
+será solicitada a senha para descriptografa
+------------------------------------------------------------------------
+Após o passo a passo acima
+Como clonar um repositório do github para o pc
+Devo acessar a pasta onde desejo armazenar o clone
+Já dentro dela 
+git clone E COLOCA O CAMINHO QUE FOI PEGO NO GITHUB EM SSH
+aparecerá uma mensagem, digitar yes
+e pronto, clone realizado
+------------------------------------------------------------------------
+INICIAR O GIT
+INICIAR O VERSIONAMENTO
+CRIAR UM COMMIT
+
+Git Init cria um repositório dentro da pasta que estou e colocar lá sub pastas de configuração do git
+Depois de fa um git init é necessário configurar o email e o name
+git config --global user.email "meuemail@gmail.com"
+git config --global user.name Orlando
+
+criar um arquivo em markdown
+
+ir na pasta onde esta salvando o arquivo e criar um arquivo de extensão ".md"
+
+Com o programa Typora é possivel fazer edição desse arquivo com tags markdown
+
+em seguida ctrl + S para salvar as alterações
+
+agora vou fazer o primeiro commit
+
+git add*
+git commit -m "Commit primeiro envio"
+
+-----------------------------------------------------------------------
+Termologia para Tracked e Untracked
+Tracked são arquivos que o git tem ciencia que existe diferente do Untracked
+
+Dentro do tracked tem:
+Unmodified >>> arquivos que não sofreram alterações
+Modifies >>> arquivos que sofreram alterações
+Staged >>> local de preparação
+
+
+git init - arquivo untracked >>> git add* - foi movido para o >>> staged
+
+depois de esta no staged >>> roda um commit >>> ele volta para unmodified
+
+---------------------------------------------------------------
+git config --list >>> lista todas as configurações atuais 
+git confif --global --unset user.name(poderia ser user.email) >>> esse comando remove a categoria user.name 
+para incluir novamente >> git config --global user.name Orlando
+---------------------------------------------------------------
+Como apontar o git para o github?
+git remote add oringe https://github.com/joseorlandodasilv/livro-receitas.git
+o HTTPS eu peguei no github quando criei meu repositório novo.
+o "oringe" foi só um apelido dado para facilitar 
+git remote -v >>> mostra que a conexão foi realizada e qual a conexão existente
+
+Como jogar/empurar oque esta na minha maquina para o github?
+git push origin master
+será solicitado uma forma de autenticação
+pronto, os arquivos da sua maquina já estão no github
+---------------------------------------------------------------
+Pode ocorrer de mais de uma pessoa esta trabalhando naquele repositório, assim em caso de erro na hora de fazer um push, deve-se fazer um pull e em seguida um push, para que o projeto esteja com a alteração mais atual
+git pull origin master
+---------------------------------------------------------------
+Para resolver os conflitos de por exemplo linhas divergentes, é necessário ajustar o arquivo para o que esta certo, e em seguida realizar um commit
+git commit -m "realizar conflitos"
+git push origin master
+---------------------------------------------------------------
+Como clonar um repositório?
+vou no repositório e copio o HTTPS
+git clone https://github.com/joseorlandodasilv/Ola-Mundo.git
+pronto
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
