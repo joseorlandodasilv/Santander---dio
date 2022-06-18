@@ -4,23 +4,23 @@
     padding: 0;
     display: flex;
 }
-.flex-item{
+.item{
     background: blue;
     color: white;
-    text-align: center;
     font-size: 20px;
+    text-align: center;
     height: 50px;
     width: 50px;
-    line-height: 50px;
     margin: 5px;
+    line-height: 50px;
 }
 .row{
     flex-direction: row;
 }
-.row-reverse{
+.row-inverso{
     flex-direction: row-reverse;
 }
-.row-reverse li{
+.row-inverso li{
     background: red;
 }
 .column{
@@ -30,10 +30,10 @@
 .column li{
     background: orange;
 }
-.column-reverse{
-    float:right;
+.column-inverso{
+    float: right;
     flex-direction: column-reverse;
 }
-.column-reverse li{
+.column-inverso li{
     background: purple;
 }

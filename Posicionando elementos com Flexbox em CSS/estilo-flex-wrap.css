@@ -1,0 +1,31 @@
+.flex-container{
+    display: flex;
+    height: 150px;
+    width: 300px;
+    border: 2px solid black;
+}
+.item{
+    font-size: 24px;
+    text-align: center;
+    line-height: 75px;
+    height: 50%;
+    width: 150px;
+}
+.red{
+    background: red;
+}
+.green{
+    background: green;
+}
+.yellow{
+    background: yellow;
+}
+.no-wrap{
+    flex-wrap: nowrap;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.wrap-reverse{
+    flex-wrap: wrap-reverse;
+}
